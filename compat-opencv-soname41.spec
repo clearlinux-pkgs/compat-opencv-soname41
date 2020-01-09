@@ -362,7 +362,7 @@ rm -f %{buildroot}/usr/bin/opencv_test_stitching
 rm -f %{buildroot}/usr/bin/opencv_test_video
 rm -f %{buildroot}/usr/bin/opencv_test_videoio
 rm -f %{buildroot}/usr/lib64/libopencv_videoio_ffmpeg.so
-rm -f %{buildroot}/usr/lib64/libopencv_videoio_gstreamer.so.avx2
+rm -f %{buildroot}/usr/lib64/libopencv_videoio_ffmpeg.so.avx2
 rm -f %{buildroot}/usr/lib64/libopencv_videoio_gstreamer.so
 rm -f %{buildroot}/usr/lib64/libopencv_videoio_gstreamer.so.avx2
 rm -f %{buildroot}/usr/bin/haswell/avx512_1/opencv_annotation
