@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : compat-opencv-soname41
 Version  : 4.1.2
-Release  : 114
+Release  : 115
 URL      : https://github.com/opencv/opencv/archive/4.1.2/opencv-4.1.2.tar.gz
 Source0  : https://github.com/opencv/opencv/archive/4.1.2/opencv-4.1.2.tar.gz
 Summary  : Open Source Computer Vision Library
