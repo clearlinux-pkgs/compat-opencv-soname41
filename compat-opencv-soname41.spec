@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : compat-opencv-soname41
 Version  : 4.1.2
-Release  : 116
+Release  : 117
 URL      : https://github.com/opencv/opencv/archive/4.1.2/opencv-4.1.2.tar.gz
 Source0  : https://github.com/opencv/opencv/archive/4.1.2/opencv-4.1.2.tar.gz
 Summary  : Open Source Computer Vision Library
@@ -60,6 +60,7 @@ BuildRequires : v4l-utils-dev
 BuildRequires : zlib-dev
 # Suppress generation of debuginfo
 %global debug_package %{nil}
+Patch1: CVE-2019-5064.patch
 
 %description
 A demo of the Java wrapper for OpenCV with two examples:
@@ -89,13 +90,14 @@ license components for the compat-opencv-soname41 package.
 %prep
 %setup -q -n opencv-4.1.2
 cd %{_builddir}/opencv-4.1.2
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578607366
+export SOURCE_DATE_EPOCH=1580340237
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -256,7 +258,7 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1578607366
+export SOURCE_DATE_EPOCH=1580340237
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/compat-opencv-soname41
 cp %{_builddir}/opencv-4.1.2/3rdparty/cpufeatures/LICENSE %{buildroot}/usr/share/package-licenses/compat-opencv-soname41/ec4468ecfe59c46406d4fc5aca1cee2a83c4d93e
